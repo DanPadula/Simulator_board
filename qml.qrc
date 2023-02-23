@@ -1,0 +1,9 @@
+<RCC>
+    <qresource prefix="/">
+        <file>main.qml</file>
+        <file>Components/Button.qml</file>
+        <file>Screens/Speedtest.qml</file>
+        <file>Screens/HomeScreen.qml</file>
+        <file>Screens/LoadTest.qml</file>
+    </qresource>
+</RCC>
