@@ -22,7 +22,8 @@ Item {
             color: root.enabled ? textColor : Qt.darker(textColor)
             text: "Button"
         }
-        MouseArea {
+        MouseArea
+        {
             id: ma
             anchors.fill: parent
             onClicked: root.clicked()

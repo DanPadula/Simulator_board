@@ -14,8 +14,8 @@ public:
   enum Direction{In, Out};
   Gpio();
   ~Gpio();
-  Q_INVOKABLE void setlevel();
-  Q_INVOKABLE void setlevellow();
+  Q_INVOKABLE void setlevel(QString command);
+  Q_INVOKABLE void setlevellow(QString command);
 };
 
 #endif // GPIO_H

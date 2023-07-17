@@ -1,9 +1,10 @@
 import QtQuick 2.15
 import QtQuick.Controls 2.12
 import "../Components"
+
 Item
 {
-    id: root
+  //  id: root
     anchors.fill: parent
     signal requesthome()
 
@@ -33,7 +34,7 @@ Item
             height: 40
             width: 180
             text: "LOAD 1"
-            onClicked: gpio.setlevel("/sys/class/gpio/gpio17/value")
+            //onClicked: gpio.setlevel("/sys/class/gpio/gpio17/value")
         }
         Button
         {
@@ -43,7 +44,7 @@ Item
             height: 40
             width: 180
             text: "LOAD 2"
-            onClicked: gpio.setlevel("/sys/class/gpio/gpio18/value")
+            //onClicked: gpio.setlevel("/sys/class/gpio/gpio18/value")
         }
         Button
         {
@@ -53,7 +54,7 @@ Item
             height: 40
             width: 180
             text:"LOAD 3"
-            onClicked: gpio.setlevel("/sys/class/gpio/gpio27/value")
+            //onClicked: gpio.setlevel("/sys/class/gpio/gpio27/value")
         }
         Button
         {
@@ -63,7 +64,7 @@ Item
             height: 40
             width: 180
             text: "NO LOAD"
-            onClicked: gpio.setlevel("/sys/class/gpio/gpio23/value")
+            //onClicked: gpio.setlevel("/sys/class/gpio/gpio23/value")
         }
 
     }

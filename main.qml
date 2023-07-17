@@ -22,7 +22,8 @@ Rectangle{
         function onRequestspeed() {screenloader.source = "Screens/Speedtest.qml"}
         function onRequestload() {screenloader.source = "Screens/LoadTest.qml"}
         function onRequesthome() {screenloader.source = "Screens/HomeScreen.qml"}
-
+        function onRequestdin() {screenloader.source = "Screens/GPIO.qml"}
+        function onRequestload2() {screenloader.source = "Screens/Load2.qml"}
     }
 }
 }

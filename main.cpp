@@ -1,10 +1,13 @@
 #include <QGuiApplication>
 #include <QQmlApplicationEngine>
+#include <QDebug>
 #include <QtQuick>
 #include <QQmlContext>
+#include <QProcess>
 #include "gpio.h"
 
 
+//using namespace std;
 
 int main(int argc, char *argv[])
 {
@@ -15,7 +18,6 @@ int main(int argc, char *argv[])
 
   //to here 8/3/2022
   QGuiApplication app(argc, argv);
-
 
   QQmlApplicationEngine engine;
 
@@ -31,6 +33,28 @@ int main(int argc, char *argv[])
       QCoreApplication::exit(-1);
   }, Qt::QueuedConnection);
   engine.load(url);
+
+
+
+  QProcess OProcess;
+  QString Command;    //Contains the command to be executed
+  QStringList args;   //Contains arguments of the command
+
+  Command = "./";
+  args<<"/home/pi/Desktop/I2C/spitest";
+
+  OProcess.start(Command,args,QIODevice::ReadOnly); //Starts execution of command
+  OProcess.waitForFinished();                       //Waits for execution to complete
+
+  QString StdOut      =   OProcess.readAllStandardOutput();  //Reads standard output
+  QString StdError    =   OProcess.readAllStandardError();   //Reads standard error
+
+  qDebug()<<"\n Printing the standard output..........\n";
+  qDebug()<<StdOut;
+  qDebug()<<"\n Printing the standard error..........\n";
+  qDebug()<<StdError;
+
+  qDebug()<<"\n\n";
 
   return app.exec();
 }

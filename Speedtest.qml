@@ -16,34 +16,103 @@ Item
 
 
 
+    Text
+    {
+        id:oncolum
+        text: "ON"
+        x: 180
+        y:220
+        font.pointSize: 30
+
+    }
+    Text
+    {
+        id: offculum
+        text: "OFF"
+        x: 360
+        y:220
+        font.pointSize: 30
+    }
+
     Button
     {
-        id: onbtn
-        text: "ON"
-        x:180
-        y: 240
+        id: lowon
+        text: "1 ON"
+        y: 280
+        x: 180
         height: 30
-        width: 50
-        onClicked:
-        {
-            gpio.setlevel()
-
-        }
+        width: 70
+        onClicked: gpio.setlevel("/sys/class/gpio/gpio24/value")
     }
     Button
     {
-        id: offbtn
+        id: lowoff
+        text: "1 OFF"
+        y:280
         x: 360
-        y: 240
-        text:"OFF"
         height: 30
-        width:50
-
-        onClicked:
-        {
-            gpio.setlevellow()
-        }
-
+        width: 70
+        onClicked: gpio.setlevellow("/sys/class/gpio/gpio24/value")
+    }
+    Button
+    {
+        id: midon
+        text: "2 ON"
+        y: 340
+        x: 180
+        height: 30
+        width: 70
+        onClicked: gpio.setlevel("/sys/class/gpio/gpio26/value")
+    }
+    Button
+    {
+        id: midoff
+        text: "2 OFF"
+        height: 30
+        width: 70
+        x: 360
+        y:340
+        onClicked: gpio.setlevellow("/sys/class/gpio/gpio26/value")
+    }
+    Button
+    {
+        id: highmidon
+        text: "3 ON"
+        height: 30
+        width: 70
+        x: 180
+        y: 400
+        onClicked: gpio.setlevel("/sys/class/gpio/gpio5/value")
+    }
+    Button
+    {
+        id: highmidoff
+        text: "3 OFF"
+        height: 30
+        width: 70
+        x: 360
+        y: 400
+        onClicked: gpio.setlevellow("/sys/class/gpio/gpio5/value")
+    }
+    Button
+    {
+        id: highon
+        text: "4 ON"
+        height: 30
+        width: 70
+        x: 180
+        y: 460
+        onClicked: gpio.setlevel("/sys/class/gpio/gpio6/value")
+    }
+    Button
+    {
+        id: highoff
+        text: "4 OFF"
+        height: 30
+        width: 70
+        x: 360
+        y: 460
+        onClicked: gpio.setlevellow("/sys/class/gpio/gpio6/value")
     }
     Button
     {
@@ -55,5 +124,7 @@ Item
         text: "HOME"
         onClicked: requesthome()
     }
+
+
 
 }
